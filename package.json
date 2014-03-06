@@ -1,0 +1,15 @@
+{
+  "name": "load-time",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "lsc app"
+  },
+  "dependencies": {
+    "LiveScript": "*",
+    "prelude-ls": "*",
+	  "execSync": "*",
+    "cheerio": "0.12.0",
+    "request": "*"
+  }
+}

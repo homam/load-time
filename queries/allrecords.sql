@@ -1,7 +1,7 @@
 USE Mobitrans;
 
 WITH Visits AS (
-	SELECT TOP 100000 
+	SELECT TOP 200000 
 	V.Id AS visitId,
 	V.Date_Created AS visitTime,
 	W.RequestId AS submissionId,
