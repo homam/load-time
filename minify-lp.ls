@@ -8,17 +8,13 @@ foldA = (f, acc, xs, callback) ->
 
 
 mapA = (f, xs, callback) ->
-	xs = xs `zip` [1 to xs.length]
+	xs = xs `zip` [0 to xs.length - 1]
 	results = []
-	got = ([r,i]) ->
+	got = (i, r) !-->
 		results := results ++ [[r,i]]
 		if results.length == xs.length
-			sorted-results = results |> (sort-by ([r,i]) -> i) >> (map ([r,i]) -> r)
-			callback sorted-results
-	each (([x,i]) ->
-		a <- f x
-		got [a, i]
-	), xs
+			callback <| results |> (sort-by ([r,i]) -> i) >> (map ([r,i]) -> r)
+	xs |> each ([x,i]) -> f x, (got i)
 
 
 request = require \request
