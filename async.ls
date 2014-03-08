@@ -8,17 +8,11 @@
 # 		callback error, null
 	  
 
-# f :: x -> CB y
-# g :: y -> z
-# bindA :: (x -> CB y) -> (y -> z)  -> (x -> CB z)
-bindA = (f, g, x, callback) !->
-	(err, fx) <- f x
-	callback err, (g fx)
 
 # f :: x -> CB y
 # g :: (y, x) -> z
-# bindA2 :: (x -> CB y) -> ((y,x) -> z)  -> (x -> CB z)
-bindA2 = (f, g) -->
+# bindA :: (x -> CB y) -> ((y,x) -> z)  -> (x -> CB z)
+bindA = (f, g) -->
 	(x, callback) ->
 		(err, fx) <- f x
 		callback err, (g fx, x)
@@ -38,11 +32,8 @@ mapA = (f, xs, callback) !-->
 
 # filterA :: ((err, bool) <- x) -> [x] -> ((err, [x]) <- void)
 filterA = (f, xs, callback) !->
-	#g = (x, cb) !-> bindA f, (-> [it, x]), x, cb
-	# g = (x, cb) !-> 
-	# 		(er, s) <- f x
-	# 		cb er, [s, x]
-	g = bindA2 f, ((fx, x)-> [fx, x])
+
+	g = bindA f, ((fx, x)-> [fx, x])
 	(err, results) <- mapA g, xs
 
 	callback err, (results |> (filter ([s,_]) -> s) >> (map ([_,x]) -> x))
@@ -62,10 +53,7 @@ anyA = (f, xs, callback) !->
 	xs |> each ((x) -> f x, got)
 
 allA = (f, xs, callback) !->
-	g = bindA2 f, ((fx,_) -> not fx)
-	# g = (x, cb) !-> bindA f, (-> !it), x, cb
-		# (err, fr) <- f x
-		# cb err, (!fr)
+	g = bindA f, ((fx,_) -> not fx)
 	(err, res) <- anyA g, xs
 	callback err, not res
 
