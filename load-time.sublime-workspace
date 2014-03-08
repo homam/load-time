@@ -1,1 +1,932 @@
-{}
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"lo",
+				"loadTime"
+			],
+			[
+				"time",
+				"time-is-sane-or-nill"
+			],
+			[
+				"un",
+				"unpivoted-data"
+			],
+			[
+				"load",
+				"loads"
+			],
+			[
+				"sub",
+				"subscribers"
+			],
+			[
+				"rando",
+				"Random"
+			],
+			[
+				"Integ",
+				"Integer	data Integer"
+			],
+			[
+				"Inte",
+				"Integer	data Integer"
+			],
+			[
+				"stack",
+				"stack2"
+			],
+			[
+				"sta",
+				"stack"
+			],
+			[
+				"putS",
+				"putStrLn	String -> IO ()"
+			],
+			[
+				"putst",
+				"putStrLn	String -> IO ()"
+			],
+			[
+				"appen",
+				"appendToDiffList	DiffList a -> a -> DiffList a"
+			],
+			[
+				"app",
+				"appendToDiffList	(DiffList a) -> a -> DiffList a"
+			],
+			[
+				"ex",
+				"example2"
+			],
+			[
+				"draw",
+				"drawPercentageAxis"
+			],
+			[
+				"class",
+				"className"
+			],
+			[
+				"act",
+				"actions"
+			],
+			[
+				"conf",
+				"confidence-data"
+			],
+			[
+				"co",
+				"confidence"
+			],
+			[
+				"selec",
+				"selectAll"
+			],
+			[
+				"bin",
+				"binomial-distribution-confidence"
+			],
+			[
+				"range",
+				"show-input-range-value"
+			],
+			[
+				"show",
+				"show-input-range-value"
+			],
+			[
+				"Int",
+				"Integer	data Integer"
+			],
+			[
+				"res",
+				"result	(Integral t, Integral b, Integral b1, Integral b2, RealFrac a) =>"
+			],
+			[
+				"from",
+				"fromIntegral"
+			],
+			[
+				"Sub",
+				"Subscribers"
+			],
+			[
+				"le",
+				"length"
+			],
+			[
+				"oper",
+				"operator-by-id"
+			],
+			[
+				"oc",
+				"oc-by-operator"
+			],
+			[
+				"all",
+				"all-ocs"
+			],
+			[
+				"se",
+				"sequenceA"
+			],
+			[
+				"loadM",
+				"load-months"
+			],
+			[
+				"valueM",
+				"valueMaps"
+			],
+			[
+				"val",
+				"valueMaps"
+			],
+			[
+				"max",
+				"maxdays"
+			],
+			[
+				"sele",
+				"selectAll"
+			],
+			[
+				"ext",
+				"extents"
+			],
+			[
+				"da",
+				"data"
+			],
+			[
+				"sequenc",
+				"sequenceA"
+			],
+			[
+				"c",
+				"callback"
+			],
+			[
+				"load-mon",
+				"load-month"
+			],
+			[
+				"meth",
+				"method"
+			],
+			[
+				"method",
+				"methodNames"
+			],
+			[
+				"metho",
+				"methodIds"
+			],
+			[
+				"s",
+				"subscribers"
+			],
+			[
+				"param",
+				"param-identity-val"
+			],
+			[
+				"parami",
+				"param-identity-val"
+			],
+			[
+				"name",
+				"nameValueMap"
+			],
+			[
+				"re-r",
+				"re-root-superCampaign"
+			],
+			[
+				"ret",
+				"re-root-country"
+			],
+			[
+				"rer",
+				"re-root-country"
+			],
+			[
+				"defau",
+				"defaultValue"
+			],
+			[
+				"test",
+				"tests"
+			],
+			[
+				"devi",
+				"device"
+			],
+			[
+				"chane",
+				"change-tree-ui"
+			],
+			[
+				"subsc",
+				"subscribers"
+			],
+			[
+				"ud",
+				"update-tree-from-ui"
+			],
+			[
+				"tr",
+				"tree-long-branches"
+			],
+			[
+				"change",
+				"change-tree-ui"
+			],
+			[
+				"upda",
+				"update-tree-from-ui"
+			],
+			[
+				"tree",
+				"treeChart"
+			],
+			[
+				"update",
+				"update-tree"
+			],
+			[
+				"api-",
+				"api-res-end"
+			],
+			[
+				"api",
+				"api-res-end"
+			],
+			[
+				"low",
+				"lower-case-data"
+			],
+			[
+				"coun",
+				"country"
+			],
+			[
+				"get",
+				"get-stats"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"conc",
+				"conclude-test"
+			],
+			[
+				"emp",
+				"empty-stats"
+			],
+			[
+				"redu",
+				"reduce-tree"
+			],
+			[
+				"hard",
+				"hard-clone-no-children"
+			],
+			[
+				"reduc",
+				"reduce-tree-stats"
+			],
+			[
+				"chi",
+				"children"
+			],
+			[
+				"me",
+				"method"
+			],
+			[
+				"su",
+				"Subscribers"
+			],
+			[
+				"mode",
+				"model_name"
+			],
+			[
+				"req",
+				"require"
+			],
+			[
+				"json",
+				"json2csv"
+			],
+			[
+				"wu",
+				"wurfl_fall_back"
+			],
+			[
+				"wur",
+				"wurfl_device_id"
+			],
+			[
+				"device",
+				"device_os"
+			],
+			[
+				"brand",
+				"brand_name"
+			],
+			[
+				"get-",
+				"get-test-stats"
+			],
+			[
+				"requ",
+				"request-json"
+			],
+			[
+				"pa",
+				"parse"
+			],
+			[
+				"methods",
+				"methods-str"
+			],
+			[
+				"met",
+				"methods"
+			],
+			[
+				"group",
+				"groups"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "analyze.ls",
+			"settings":
+			{
+				"buffer_size": 2761,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 387.0,
+		"selected_items":
+		[
+			[
+				"haskell ",
+				"Preferences: SublimeHaskell Settings – User"
+			],
+			[
+				"haskell",
+				"Preferences: SublimeHaskell Settings – Default"
+			],
+			[
+				"conf",
+				"Preferences: Package Control Settings – Default"
+			],
+			[
+				"confi",
+				"SublimeHaskell: Configure"
+			],
+			[
+				"installp",
+				"Package Control: Install Package"
+			],
+			[
+				"add r",
+				"Package Control: Add Repository"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"build",
+				"Build: Build"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"Package Control: i",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: add r",
+				"Package Control: Add Repository"
+			],
+			[
+				"Package Control: add",
+				"Package Control: Add Repository"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/homam/dev/load-time/data/allrecords.csv",
+		"/Users/homam/dev/load-time/load-time.sublime-",
+		"/Users/homam/dev/haskell/monads/difflist.hs",
+		"/Users/homam/Library/Application Support/Sublime Text 3/Packages/SublimeHaskell/Settings/SublimeHaskell.sublime-settings",
+		"/Users/homam/Library/Application Support/Sublime Text 3/Packages/User/SublimeHaskell.sublime-settings",
+		"/Users/homam/Library/Application Support/Sublime Text 3/Packages/Package Control/Package Control.sublime-settings",
+		"/Users/homam/dev/ab-manifesto/views/home/javascript/map.ls",
+		"/Users/homam/dev/ab-manifesto/views/home/javascript/coin-trial-table.ls",
+		"/Users/homam/dev/ab-manifesto/init.sh",
+		"/Users/homam/dev/ab-manifesto/views/home/javascript/utils.ls",
+		"/Users/homam/dev/ab-manifesto/app.ls",
+		"/Users/homam/dev/ab-manifesto/.gitignore",
+		"/Users/homam/dev/ab-manifesto/build.sh",
+		"/Users/homam/dev/ab-manifesto/Procfile",
+		"/Users/homam/dev/abshow/package.json",
+		"/Users/homam/dev/abshow/.gitignore",
+		"/Users/homam/dev/abshow/views/home/javascript/index.js",
+		"/Users/homam/dev/abshow/views/home/javascript/index.ls",
+		"/Users/homam/dev/abshow/app.ls",
+		"/Users/homam/dev/abshow/views/home/index.ejs",
+		"/Users/homam/dev/abshow/init.sh",
+		"/Users/homam/dev/abshow/public/javascript/libs/d3.js",
+		"/Users/homam/dev/abshow/routes/index.ls",
+		"/Users/homam/dev/abshow/public/javascript/libs/prelude-browser.js",
+		"/Users/homam/dev/abshow/Procfile",
+		"/Users/homam/dev/abshow/views/home/style/index.styl",
+		"/Users/homam/dev/abshow/README.md",
+		"/Users/homam/dev/viz/views/stacked/javascript/graph-a-composite-chart.ls",
+		"/Users/homam/dev/viz/views/stacked/javascript/csv-billing.ls",
+		"/Users/homam/dev/viz/views/stacked/javascript/graph-a-stacked-bar-chart.ls",
+		"/Users/homam/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/homam/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/homam/dev/viz/views/stacked/style/index.styl",
+		"/Users/homam/dev/viz/views/stacked/javascript/index.ls",
+		"/Users/homam/dev/viz/views/stacked/index.ejs",
+		"/Users/homam/dev/viz/views/home/javascript/csv-arpu.ls",
+		"/Users/homam/dev/viz/views/home/index.ejs",
+		"/Users/homam/dev/viz/views/home/javascript/utils.ls",
+		"/Users/homam/dev/viz/views/home/javascript/index.ls",
+		"/Users/homam/dev/viz/views/home/javascript/csv-billing.ls",
+		"/Users/homam/dev/viz/views/home/javascript/csv-_.ls",
+		"/Users/homam/dev/viz/views/stacked/style/.gitignore",
+		"/Users/homam/dev/viz/views/stacked/javascript/.gitignore",
+		"/Users/homam/dev/viz/views/home/style/index.styl",
+		"/Users/homam/dev/viz/routes/index.ls",
+		"/Users/homam/dev/viz/viz.sublime-project",
+		"/C/GitHub/viz/views/home/javascript/csv-operators.ls",
+		"/C/GitHub/viz/views/home/javascript/csv-_.ls",
+		"/C/GitHub/viz/views/home/javascript/csv-billing.ls",
+		"/C/GitHub/viz/views/home/javascript/parse-csv.ls",
+		"/C/GitHub/viz/views/home/index.ejs",
+		"/C/GitHub/viz/views/home/javascript/utils.ls",
+		"/C/GitHub/viz/viz.sublime-project",
+		"/C/Users/homam_000/AppData/Roaming/Sublime Text 3/Packages/User/Stylus.sublime-build",
+		"/C/GitHub/device-detection-client/views/home/javascript/tree-map.ls",
+		"/C/GitHub/device-detection-client/views/home/style/index.styl",
+		"/C/GitHub/device-detection-client/views/home/javascript/tree-map-fontsize.js",
+		"/C/GitHub/device-detection-client/views/home/javascript/tree-longBranches.ls",
+		"/C/GitHub/device-detection-client/views/home/javascript/index.ls",
+		"/C/GitHub/device-detection-client/views/home/javascript/utils.ls",
+		"/C/GitHub/device-detection-client/views/home/javascript/index.js",
+		"/C/GitHub/device-detection-client/views/home/javascript/tree-map.js",
+		"/C/GitHub/device-detection-client/routes/index.ls",
+		"/C/GitHub/device-detection-client/stats/testsSummary.ls",
+		"/C/GitHub/device-detection-client/app.ls",
+		"/C/GitHub/device-detection-client/stats/stats.ls",
+		"/C/GitHub/device-detection-client/stats/treefy.ls",
+		"/C/GitHub/device-detection-client/device-detection.sublime-project",
+		"/C/Users/homam_000/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/homam_000/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/GitHub/device-detection-client/views/home/javascript/[cmd",
+		"/C/Users/homam_000/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/Users/homam_000/AppData/Roaming/Sublime Text 3/Packages/User/LiveScript.sublime-build",
+		"/C/GitHub/device-detection-client/public/javascript/stats.ls",
+		"/C/GitHub/device-detection-client/public/javascript/fun.ls",
+		"/C/GitHub/device-detection-client/public/javascript/fun.js",
+		"/C/Users/homam_000/Desktop/ls/stats.js",
+		"/C/Users/homam_000/Desktop/ls/treefy.js",
+		"/C/Users/homam_000/Desktop/ls/flatten.ls",
+		"/C/Users/homam_000/Desktop/ls/test.ls",
+		"/C/Users/homam_000/Desktop/ls/nstats.ls",
+		"/C/Users/homam_000/Desktop/ls/concludeATest.ls",
+		"/C/GitHub/timeseries/charts/devicedet-controls/treemap-zoomable.coffee",
+		"/C/Users/homam_000/Desktop/ls/uae.js",
+		"/C/Users/homam_000/Desktop/ls/test.js",
+		"/C/Users/homam_000/Desktop/test.ls"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"npivoted-data",
+			"(filter (-> !!it))",
+			"navigationTime",
+			"loads",
+			"fetchTime",
+			"navigationTime",
+			"randomState",
+			"writer",
+			"writ",
+			"fromDiff",
+			"logNumber",
+			"Float",
+			"(k, 10)",
+			"Expected Values",
+			".x",
+			"left",
+			"binomial-distribution-find-confidence-interval-of-distribution",
+			"d3.forma",
+			"binomial-confidence-range",
+			"60",
+			"binomial-confidence-range",
+			"500",
+			"Prelude> ",
+			"\\)",
+			"\\(",
+			"Binomial(",
+			"Binomial",
+			"Binomial(",
+			"dispertion",
+			"p>",
+			"<p",
+			"p",
+			"keys",
+			"Obj.keys",
+			"Obj.",
+			"d3 = fun",
+			"d3 = ",
+			"rout",
+			"abshow",
+			"a1",
+			"a",
+			"a1",
+			"binomialNormalConf",
+			"conf",
+			"inv",
+			"y'''",
+			"binomialResult",
+			"گر",
+			"service-filter",
+			"hidden",
+			"remove",
+			"bar",
+			"reg",
+			"check",
+			"stacked",
+			"scroll",
+			"parse",
+			"load-month",
+			"$(",
+			"$.map",
+			"popula",
+			"value-map",
+			", value-map",
+			".subs",
+			"type",
+			"wap",
+			"with",
+			"listOfSubscriptioMethods",
+			"drag",
+			"cabce",
+			"cabcek",
+			"transitionDuration",
+			"axis",
+			"tree",
+			"color",
+			"conclude",
+			"++",
+			"ref",
+			"stats-tree",
+			"stats.",
+			"$",
+			".val()",
+			"element",
+			"chosen-me",
+			"countries",
+			"chosen(",
+			"chose",
+			"chosen()",
+			"update-Tree-fr",
+			"updateTreeFromUi",
+			"get-stats",
+			"uae",
+			"sor",
+			"100",
+			"selected-st",
+			"selected-s",
+			"d.data",
+			"color",
+			"append",
+			"fold-real-nodes",
+			"sqrt",
+			"pow",
+			"format-date",
+			"fold-real-nodes",
+			"update-all-nodes",
+			"kill-children",
+			"stats",
+			"sum-visits",
+			"shorten-wurfl-device-name",
+			"sor",
+			"render-method-stats",
+			"trace",
+			"console",
+			"sSelected",
+			"cSelected",
+			"sSelected",
+			"vSelected",
+			"kill-",
+			"build",
+			"+b",
+			"request",
+			"ref$",
+			"country-ids",
+			"get-country-id",
+			"hard-clone-without-children",
+			"hard-clone-no-children",
+			"reduce-tree-stats",
+			"hard-"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"listOfSubscriptionMethods",
+			"val",
+			"",
+			"it."
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "analyze.ls",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2761,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1253,
+								1207
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LiveScript/Syntaxes/CoffeeScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 3.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "load-time.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"map.ls",
+				"views/home/javascript/map.ls"
+			],
+			[
+				".sty",
+				"views/home/style/index.styl"
+			],
+			[
+				"uti",
+				"views/home/javascript/utils.ls"
+			],
+			[
+				".ls",
+				"views/home/javascript/binomial-histogram.ls"
+			],
+			[
+				"inde",
+				"views/home/javascript/index.ls"
+			],
+			[
+				"index.",
+				"views/home/index.ejs"
+			],
+			[
+				"prelu",
+				"public/javascript/libs/prelude-browser.js"
+			],
+			[
+				"stacked/bar",
+				"views/stacked/javascript/graph-a-stacked-bar-chart.ls"
+			],
+			[
+				"stacked/index.ls",
+				"views/stacked/javascript/index.ls"
+			],
+			[
+				"stacked/index",
+				"views/stacked/index.ejs"
+			],
+			[
+				"csv_",
+				"views\\home\\javascript\\csv-_.ls"
+			],
+			[
+				"csv-ap",
+				"views\\home\\javascript\\csv-arpu.ls"
+			],
+			[
+				"csv-",
+				"views\\home\\javascript\\csv-billing.ls"
+			],
+			[
+				"_.",
+				"views\\home\\javascript\\csv-_.ls"
+			],
+			[
+				"csv-_",
+				"views\\home\\javascript\\csv-_.ls"
+			],
+			[
+				"csv-bi",
+				"views\\home\\javascript\\csv-billing.ls"
+			],
+			[
+				"index.ls",
+				"views\\home\\javascript\\index.ls"
+			],
+			[
+				"ut",
+				"views\\home\\javascript\\utils.ls"
+			],
+			[
+				"csv",
+				"views\\home\\javascript\\csv-arpu.ls"
+			],
+			[
+				"index.je",
+				"views\\home\\index.ejs"
+			],
+			[
+				"cvp",
+				"views\\home\\javascript\\csv-operators.ls"
+			],
+			[
+				"index.ej",
+				"views\\home\\index.ejs"
+			],
+			[
+				"util",
+				"views\\home\\javascript\\utils.ls"
+			],
+			[
+				"utils.ls",
+				"views\\home\\javascript\\utils.ls"
+			],
+			[
+				"index.sty",
+				"views\\home\\style\\index.styl"
+			],
+			[
+				"tree-ma",
+				"views\\home\\javascript\\tree-map.ls"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 151.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
