@@ -6,7 +6,7 @@ fs = require \fs
 sh = require \execSync
 css = require \css
 path = require \path
-{compA, mapA} = require \./async.ls
+{mapA, compA, compA_} = require \./async.ls
 
 
 parse-css = ([text, url]) ->
@@ -42,11 +42,10 @@ download-url = (url, callback) !->
 	(e, r, b) <- request url
 	callback e, b
 
-download-and-save-urls = (downlaoder, urls, filename, callback) !->
+download-and-save-urls = (downlaoder, urls, filename, callback) !-->
 	(e, arr) <- mapA downlaoder, urls
-	console.log <| map (.length), arr
 	fs.writeFileSync filename, (join '\n\n', arr)
-	callback arr
+	callback null, arr
 
 
 host = 'http://fun.mozook.com'
@@ -59,32 +58,31 @@ host = 'http://fun.mozook.com'
 
 $ = ch.load body, ignoreWhitespace: true
 
-urls = $ 'head script[src]' |> map (host+) . (.attribs.src)
+js-urls = $ 'head script[src]' |> map (host+) . (.attribs.src)
 
-console.log urls
+console.log js-urls
+
+css-urls = $ 'head link[href]' |>  map (host+) . (.attribs.href) |> filter (-> it.indexOf(\.css) > 0)
+
+console.log css-urls
 
 sh.exec 'mkdir out'
 
-
-_ <- download-and-save-urls (download-url `compA` ((text,u) -> console.log("got #u #{text.length}"); text)), urls, 'out/all.js'
-
-
-console.log 'all.js written'
-
-sh.exec './closure-compiler.sh out/all.js out/all.min.js'
-
-console.log 'all.min.js written'
-
-urls = $ 'head link[href]' |>  map (host+) . (.attribs.href) |> filter (-> it.indexOf(\.css) > 0)
-
-console.log urls
-
-_ <- download-and-save-urls download-url `compA` ((text,u) -> [text, u]) `compA` parse-css, urls, 'out/all.css'
-
-console.log 'all.css written'
+log-got = (text,u) -> 
+	console.log("got #u #{text.length}")
+	text
 
 
+download-and-save-all-js = ((download-and-save-urls (download-url `compA` log-got), js-urls, 'out/all.js') `compA_` (_) -> 
+	console.log 'all.js written', new Date!
+	sh.exec './closure-compiler.sh out/all.js out/all.min.js'
+	console.log 'all.min.js written', new Date!
+	)
 
 
-#console.log body
-#console.log response
+download-and-save-all-css = (download-and-save-urls download-url `compA` log-got `compA` ((text,u) -> [text, u]) `compA` parse-css, css-urls, 'out/all.css') `compA_` (_) -> console.log 'all.css written', new Date!
+
+_ <- mapA ((f, callback) -> (f callback)), [download-and-save-all-js, download-and-save-all-css]
+
+console.log "done."
+

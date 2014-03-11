@@ -23,6 +23,11 @@ compA = (f, g) -->
 		(err, fx) <- f x
 		callback err, (g fx, x)
 
+compA_ = (f, g) -->
+	(callback) ->
+		(err, fx) <- f!
+		callback err, (g fx)
+
 kcompsA = (f, g) -->
 	(x, callback) ->
 		(err, fx) <- f x
@@ -94,6 +99,7 @@ exports.allA = allA
 exports.anyA = anyA
 exports.findA = findA
 exports.compA = compA
+exports.compA_ = compA_
 
 return 
 
