@@ -11,11 +11,22 @@
 
 # f :: x -> CB y
 # g :: (y, x) -> z
-# bindA :: (x -> CB y) -> ((y,x) -> z)  -> (x -> CB z)
-bindA = (f, g) -->
+# fmapA :: (x -> CB y) -> ((y,x) -> z)  -> (x -> CB z)
+# fmapA = (f, g) -->
+# 	(x, callback) ->
+# 		(err, fx) <- f x
+# 		callback err, (g fx, x)
+
+# compA :: (x -> CB y) -> ((y,x) -> z)  -> (x -> CB z)
+compA = (f, g) -->
 	(x, callback) ->
 		(err, fx) <- f x
 		callback err, (g fx, x)
+
+kcompsA = (f, g) -->
+	(x, callback) ->
+		(err, fx) <- f x
+		g fx, callback
 
 # mapA :: ((err, b) <- x) -> [x]-> ((err, [b]) <- void)
 mapA = (f, xs, callback) !-->
@@ -33,7 +44,7 @@ mapA = (f, xs, callback) !-->
 # filterA :: ((err, bool) <- x) -> [x] -> ((err, [x]) <- void)
 filterA = (f, xs, callback) !->
 
-	g = bindA f, ((fx, x)-> [fx, x])
+	g = compA f, ((fx, x)-> [fx, x])
 	(err, results) <- mapA g, xs
 
 	callback err, (results |> (filter ([s,_]) -> s) >> (map ([_,x]) -> x))
@@ -53,7 +64,7 @@ anyA = (f, xs, callback) !->
 	xs |> each ((x) -> f x, got)
 
 allA = (f, xs, callback) !->
-	g = bindA f, ((fx,_) -> not fx)
+	g = compA f, ((fx,_) -> not fx)
 	(err, res) <- anyA g, xs
 	callback err, not res
 
@@ -82,7 +93,7 @@ exports.filterA = filterA
 exports.allA = allA
 exports.anyA = anyA
 exports.findA = findA
-exports.bindA = bindA
+exports.compA = compA
 
 return 
 
