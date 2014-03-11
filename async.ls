@@ -70,8 +70,22 @@ findA = (f, xs, callback) !->
 			call!
 	xs |> each ((x) -> f x, (got x))
 
+# f :: x -> CB y (sortable)
+# xs :: [x]
+# callback :: CB [x]
 sort-byA = (f, xs, callback) !->
 	null
+
+
+exports.mapA = mapA
+exports.filterA = filterA
+exports.allA = allA
+exports.anyA = anyA
+exports.findA = findA
+exports.bindA = bindA
+
+return 
+
 
 f1 = (x, callback) -> setTimeout (-> callback null, x*x), 200
 f2 = (x, callback) -> setTimeout (-> callback (if x == 7 then 'ERROR at 7' else null), (odd x*x)), 100

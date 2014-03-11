@@ -729,8 +729,8 @@
 						"selection":
 						[
 							[
-								1253,
-								1207
+								417,
+								417
 							]
 						],
 						"settings":
@@ -738,7 +738,7 @@
 							"syntax": "Packages/LiveScript/Syntaxes/CoffeeScript.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 3.0,
+						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
