@@ -32,7 +32,6 @@ fix-css-declaration = (path, declaration) -->
 	declaration
 
 fix-css-url = (current-path, url) ->
-	#current-path = '/_common/css/'
 	path.normalize current-path + url
 
 

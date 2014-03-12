@@ -1,5 +1,10 @@
 {id, odd, Obj,map, concat, filter, each, find, fold, foldr, fold1, zip, head, tail, all, flatten, sum, group-by, obj-to-pairs, partition, join, unique, sort-by, reverse, empty} = require 'prelude-ls'
 
+# (>=>) :: Monad m => (a -> m b) -> (b -> m c) -> a -> m c
+# (>>=) :: Monad m => m a -> (a -> m b) -> m b)
+# (<*>) :: Applicative f => f (a -> b) -> f a -> f b
+# fmap :: Functor f => (a -> b) -> f a -> f b
+
 # ferr = (f, callback) ->
 # 	try
 # 	  	(err, r) <- f!
@@ -17,12 +22,12 @@
 # 		(err, fx) <- f x
 # 		callback err, (g fx, x)
 
-# compA :: (x -> CB y) -> ((y,x) -> z)  -> (x -> CB z)
+# compA :: (x -> CB y) -> ((y,x) -> z) -> (x -> CB z)
 compA = (f, g) -->
 	(x, callback) ->
 		(err, fx) <- f x
 		callback err, (g fx, x)
-
+# compA_ :: (CB y) -> (y -> z) -> (CB z)
 compA_ = (f, g) -->
 	(callback) ->
 		(err, fx) <- f!
