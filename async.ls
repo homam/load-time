@@ -1,4 +1,4 @@
-{id, odd, Obj,map, concat, filter, each, find, fold, foldr, fold1, zip, head, tail, all, flatten, sum, group-by, obj-to-pairs, partition, join, unique, sort-by, reverse, empty} = require 'prelude-ls'
+{id, odd, div, Obj,map, concat, filter, each, find, fold, foldr, fold1, zip, head, tail, all, flatten, sum, group-by, obj-to-pairs, partition, join, unique, sort-by, reverse, empty} = require 'prelude-ls'
 
 # (>=>) :: Monad m => (a -> m b) -> (b -> m c) -> a -> m c
 # (>>=) :: Monad m => m a -> (a -> m b) -> m b)
@@ -33,6 +33,7 @@ compA_ = (f, g) -->
 		(err, fx) <- f!
 		callback err, (g fx)
 
+# kcompsA :: (x -> CB y) -> (y -> CB z) -> (CB z)
 kcompsA = (f, g) -->
 	(x, callback) ->
 		(err, fx) <- f x
@@ -50,6 +51,24 @@ mapA = (f, xs, callback) !-->
 			if results.length == xs.length
 				callback null, (results |> (sort-by ([_,i]) -> i) >> (map ([r,_]) -> r))
 	xs |> each ([x,i]) -> f x, (got i)
+
+mapS = (f, xs, callback) !-->
+	next = (results) ->
+		(err, r) <- f(xs[results.length])
+		if !!err
+			callback err, results
+		else
+			results.push r
+			if results.length == xs.length
+				callback null, results
+			else
+				next results
+	next []
+
+mapA-limited = (n, f, xs, callback) !-->
+	parts = partition-in-n-parts n, xs
+	(err, res) <- ((mapS (mapA f), parts))
+	callback err, concat res
 
 # filterA :: ((err, bool) <- x) -> [x] -> ((err, [x]) <- void)
 filterA = (f, xs, callback) !->
@@ -98,6 +117,10 @@ sort-byA = (f, xs, callback) !->
 	null
 
 
+# :: Int -> [x] -> [[x]]
+partition-in-n-parts = (n, arr) -->
+	(arr `zip` [0 to arr.length]) |> (group-by ([a, i]) -> i `div` n) |> obj-to-pairs |> map (([_,ar]) -> (map (([a, _]) -> a), ar))
+
 exports.mapA = mapA
 exports.filterA = filterA
 exports.allA = allA
@@ -105,6 +128,8 @@ exports.anyA = anyA
 exports.findA = findA
 exports.compA = compA
 exports.compA_ = compA_
+
+
 
 return 
 
