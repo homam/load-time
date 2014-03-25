@@ -27,6 +27,7 @@ compA = (f, g) -->
 	(x, callback) ->
 		(err, fx) <- f x
 		callback err, (g fx, x)
+
 # compA_ :: (CB y) -> (y -> z) -> (CB z)
 compA_ = (f, g) -->
 	(callback) ->
@@ -39,7 +40,8 @@ kcompsA = (f, g) -->
 		(err, fx) <- f x
 		g fx, callback
 
-# mapA :: ((err, b) <- x) -> [x]-> ((err, [b]) <- void)
+# :: (a -> CB b) -> [a] -> CB [b]
+# parallel
 mapA = (f, xs, callback) !-->
 	xs = xs `zip` [0 to xs.length - 1]
 	results = []
@@ -52,6 +54,8 @@ mapA = (f, xs, callback) !-->
 				callback null, (results |> (sort-by ([_,i]) -> i) >> (map ([r,_]) -> r))
 	xs |> each ([x,i]) -> f x, (got i)
 
+# :: (a -> CB b) -> [a] -> CB [b]
+# series
 mapS = (f, xs, callback) !-->
 	next = (results) ->
 		(err, r) <- f(xs[results.length])
@@ -67,11 +71,20 @@ mapS = (f, xs, callback) !-->
 
 mapA-limited = (n, f, xs, callback) !-->
 	parts = partition-in-n-parts n, xs
-	(err, res) <- ((mapS (mapA f), parts))
-	callback err, concat res
+	g = (mapS (mapA f)) `compA` concat
+	g parts, callback
 
-# filterA :: ((err, bool) <- x) -> [x] -> ((err, [x]) <- void)
-filterA = (f, xs, callback) !->
+# filter-bu-map :: ((a -> CB [Bool, a]) -> [a] -> CB [[Bool, a]]) -> (a -> CB Bool) -> [a] -> CB [a]
+filter-by-map = (mapper, f, xs, callback) !-->
+
+	g = compA f, ((fx, x)-> [fx, x])
+	(err, results) <- mapper g, xs
+
+	callback err, (results |> (filter ([s,_]) -> s) >> (map ([_,x]) -> x))
+
+
+# filterA :: (x -> CB Bool) -> [x] -> CB [x]
+filterA = (f, xs, callback) !-->
 
 	g = compA f, ((fx, x)-> [fx, x])
 	(err, results) <- mapA g, xs
@@ -129,7 +142,9 @@ exports.findA = findA
 exports.compA = compA
 exports.compA_ = compA_
 
-
+arr = [\a \b \c \d \e \f \g \h \i \j]
+(err, res) <- mapA-limited 3, ((x, callback) -> callback(null, x + "!")), arr
+console.log err, res
 
 return 
 
