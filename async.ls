@@ -1,4 +1,4 @@
-{id, odd, Obj,map, concat, filter, each, find, fold, foldr, fold1, zip, head, tail, all, flatten, sum, group-by, obj-to-pairs, partition, join, unique, sort-by, reverse, empty} = require 'prelude-ls'
+{id, odd, div, Obj,map, concat, filter, each, find, fold, foldr, fold1, zip, head, tail, all, flatten, sum, group-by, obj-to-pairs, partition, join, unique, sort-by, reverse, empty} = require 'prelude-ls'
 
 # (>=>) :: Monad m => (a -> m b) -> (b -> m c) -> a -> m c
 # (>>=) :: Monad m => m a -> (a -> m b) -> m b)
@@ -27,18 +27,21 @@ compA = (f, g) -->
 	(x, callback) ->
 		(err, fx) <- f x
 		callback err, (g fx, x)
+
 # compA_ :: (CB y) -> (y -> z) -> (CB z)
 compA_ = (f, g) -->
 	(callback) ->
 		(err, fx) <- f!
 		callback err, (g fx)
 
+# kcompsA :: (x -> CB y) -> (y -> CB z) -> (CB z)
 kcompsA = (f, g) -->
 	(x, callback) ->
 		(err, fx) <- f x
 		g fx, callback
 
-# mapA :: ((err, b) <- x) -> [x]-> ((err, [b]) <- void)
+# :: (a -> CB b) -> [a] -> CB [b]
+# parallel
 mapA = (f, xs, callback) !-->
 	xs = xs `zip` [0 to xs.length - 1]
 	results = []
@@ -51,8 +54,37 @@ mapA = (f, xs, callback) !-->
 				callback null, (results |> (sort-by ([_,i]) -> i) >> (map ([r,_]) -> r))
 	xs |> each ([x,i]) -> f x, (got i)
 
-# filterA :: ((err, bool) <- x) -> [x] -> ((err, [x]) <- void)
-filterA = (f, xs, callback) !->
+# :: (a -> CB b) -> [a] -> CB [b]
+# series
+mapS = (f, xs, callback) !-->
+	next = (results) ->
+		(err, r) <- f(xs[results.length])
+		if !!err
+			callback err, results
+		else
+			results.push r
+			if results.length == xs.length
+				callback null, results
+			else
+				next results
+	next []
+
+mapA-limited = (n, f, xs, callback) !-->
+	parts = partition-in-n-parts n, xs
+	g = (mapS (mapA f)) `compA` concat
+	g parts, callback
+
+# filter-bu-map :: ((a -> CB [Bool, a]) -> [a] -> CB [[Bool, a]]) -> (a -> CB Bool) -> [a] -> CB [a]
+filter-by-map = (mapper, f, xs, callback) !-->
+
+	g = compA f, ((fx, x)-> [fx, x])
+	(err, results) <- mapper g, xs
+
+	callback err, (results |> (filter ([s,_]) -> s) >> (map ([_,x]) -> x))
+
+
+# filterA :: (x -> CB Bool) -> [x] -> CB [x]
+filterA = (f, xs, callback) !-->
 
 	g = compA f, ((fx, x)-> [fx, x])
 	(err, results) <- mapA g, xs
@@ -98,6 +130,10 @@ sort-byA = (f, xs, callback) !->
 	null
 
 
+# :: Int -> [x] -> [[x]]
+partition-in-n-parts = (n, arr) -->
+	(arr `zip` [0 to arr.length]) |> (group-by ([a, i]) -> i `div` n) |> obj-to-pairs |> map (([_,ar]) -> (map (([a, _]) -> a), ar))
+
 exports.mapA = mapA
 exports.filterA = filterA
 exports.allA = allA
@@ -105,6 +141,10 @@ exports.anyA = anyA
 exports.findA = findA
 exports.compA = compA
 exports.compA_ = compA_
+
+arr = [\a \b \c \d \e \f \g \h \i \j]
+(err, res) <- mapA-limited 3, ((x, callback) -> callback(null, x + "!")), arr
+console.log err, res
 
 return 
 
