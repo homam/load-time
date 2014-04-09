@@ -1,7 +1,7 @@
 USE Mobitrans;
 
 WITH Visits AS (
-	SELECT TOP 200000 
+	SELECT TOP {{N}}
 	V.Id AS visitId,
 	V.Date_Created AS visitTime,
 	W.RequestId AS submissionId,
@@ -34,5 +34,5 @@ SELECT C.ISO_Code AS country, P.Aspxfile as pageName, R.Referer AS referrer, E.*
 INNER JOIN dbo.Countries C WITH (NOLOCK) ON C.CountryId = E.countryId
 INNER JOIN dbo.RefererValues R WITH (NOLOCK) ON R.Pk = E.refId
 INNER JOIN dbo.PageValues P WITH (NOLOCK) ON P.Id = E.pageId
-WHERE E.visitTime > '2014-03-03 17:00:00'
+WHERE E.visitTime > '2014-04-01 12:00:00'
 ORDER BY visitid desc

@@ -378,14 +378,38 @@
 				"buffer_size": 2761,
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"file": "/Users/homam/dev/celtra/mobiSpy.js",
+			"settings":
+			{
+				"buffer_size": 4270,
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 387.0,
+		"height": 127.0,
 		"selected_items":
 		[
+			[
+				"javas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"installpa",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"remove ",
+				"Package Control: Remove Package"
+			],
 			[
 				"haskell ",
 				"Preferences: SublimeHaskell Settings – User"
@@ -460,6 +484,10 @@
 	},
 	"file_history":
 	[
+		"/Users/homam/dev/load-time/load-time.sublime-project",
+		"/Users/homam/dev/load-time/async.js",
+		"/Users/homam/dev/load-time/queries/allrecords.sql",
+		"/Users/homam/dev/load-time/analyze.ls",
 		"/Users/homam/dev/load-time/data/allrecords.csv",
 		"/Users/homam/dev/load-time/load-time.sublime-",
 		"/Users/homam/dev/haskell/monads/difflist.hs",
@@ -564,6 +592,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"$",
+			".url",
+			"creative.userParams",
 			"npivoted-data",
 			"(filter (-> !!it))",
 			"navigationTime",
@@ -688,10 +719,7 @@
 			"ref$",
 			"country-ids",
 			"get-country-id",
-			"hard-clone-without-children",
-			"hard-clone-no-children",
-			"reduce-tree-stats",
-			"hard-"
+			"hard-clone-without-children"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -713,7 +741,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -729,14 +757,44 @@
 						"selection":
 						[
 							[
-								417,
-								417
+								1771,
+								1771
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/LiveScript/Syntaxes/CoffeeScript.tmLanguage",
+							"syntax": "Packages/sublime-livescript/Syntax/LiveScript.tmLanguage",
 							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 389.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/homam/dev/celtra/mobiSpy.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4270,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4270,
+								4270
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,

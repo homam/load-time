@@ -23,29 +23,6 @@ records = map ([visitId,[r0,...]:records]) ->
 	loadTime: earliestRecord?.loadTime or null
 
 , visits
-#console.log (JSON.stringify visits, null, 4)
-#console.log (JSON.stringify records, null, 4)
-#console.log <| (filter (-> it.submissions > 0)) >> (.length) <| records
-
-#console.log <| records |> (map (.loadTime)) >> (filter (-> !!it and 500 < it < 120000)) >> mean
-
-# unpivoted-data =
-# 	records |> (group-by (-> [it.country, it.page, it.referrer])) >> obj-to-pairs 
-# 		|> map ([_, [r0,...]:records]) -> 
-# 				country: r0.country
-# 				page: r0.page
-# 				referrer: r0.referrer
-# 				visits: records.length
-# 				loads: records |> (filter (-> it.loads > 0)) >> (.length)
-# 				submissions: records |> (filter (-> it.submissions > 0)) >> (.length)
-# 				subscribers: records |> (filter (-> it.subscribers > 0)) >> (.length)
-# 				navigationTime: records |> (map (.navigationTime)) >> existential-filter >> time-sanity-filter >> mean
-# 				fetchTime: records |> (map (.fetchTime)) >> existential-filter >> time-sanity-filter >> mean
-# 				loadTime: records |> (map (.loadTime)) >> existential-filter >> time-sanity-filter >> mean
-
-		
-
-
 
 
 all-keys = (Obj.keys records[0])
@@ -58,3 +35,5 @@ csv = csv |> (fold ((acc,a) -> acc + '\n' + a), '')
 
 fs = require \fs
 fs.writeFileSync 'data/allrecords.csv', csv
+
+console.log "Check: data/allrecords.csv"

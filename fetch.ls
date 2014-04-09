@@ -2,24 +2,38 @@
 
 sql = require \mssql
 fs = require \fs
+prompt = require \prompt
+prompt.start!
+
+_ <- fs.mkdir \data
+
+(err, {username, password, topn}) <- prompt.get ['username', 'password', 'topn']
+
 
 config =
-	user: 'homam'
-	password: 'gamma123'
+	user: username
+	password: password
 	server: '172.30.0.165'
 	database: 'Mobitrans'
 
 
 query = fs.readFileSync 'queries/allrecords.sql', 'utf8'
 
+query = query.replace "{{N}}", topn
+
+console.log query
+
+console.log "\n\nConnecting to #{config.server} (#username)"
 
 sql.connect config, (err) ->
 	return console.err err if !!err
+	console.log "Connected, querying..."
 
 	request = new sql.Request!
 
 	(err, records) <- request.query query
 	return console.err err if !!err
+	console.log "Query is done"
 
 	records = map (->
 		it <<<
@@ -29,9 +43,11 @@ sql.connect config, (err) ->
 
 	#console.log (JSON.stringify records, null, 4)
 
+
 	fs.writeFileSync 'data/allrecords.json', (JSON.stringify records, null, 4)
 
 	console.log 'done!'
+	console.log "now run lsc analyze"
 
 	process.exit!
 
