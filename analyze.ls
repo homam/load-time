@@ -1,4 +1,8 @@
+#!/usr/local/bin/lsc
+
 {id, Obj,map, concat, mean, filter, head, each, take, find, fold, foldr, fold1, tail, any, all, flatten, sum, group-by, obj-to-pairs, partition, join, unique, sort-by, reverse, empty} = require 'prelude-ls'
+
+bool-to-int = (x) -> if x then 1 else 0
 
 existential-filter = filter (-> !!it)
 time-sanity-filter = (-> 500 < it < 120000)
@@ -13,12 +17,12 @@ records = map ([visitId,[r0,...]:records]) ->
 	country: r0.country
 	page: r0.pageName
 	referrer: r0.referrer
-	webBrowser: r0.webBrowser
+	webBrowser: bool-to-int r0.webBrowser
 	submissions: records |> (map (.submissionId)) >> existential-filter >> unique >> (.length) 
 	subscribers: records |> (map (.subscriberId)) >> existential-filter >> unique >> (.length) 
 	loads: records |> (map (.eventId)) >> (filter (-> !!it)) >> unique >> (.length) 
-	loaded: records |> any (-> !!it.eventId)
-	navigationTime: earliestRecord?.navigationTime or null
+	loaded: records |> any (-> !!it.eventId) |> bool-to-int
+	navigationTime: earlicdestRecord?.navigationTime or null
 	fetchTime: earliestRecord?.fetchTime or null
 	loadTime: earliestRecord?.loadTime or null
 
@@ -31,7 +35,7 @@ csv =  records |> map (-> it <<< {navigationTime: time-is-sane-or-nill(it.naviga
 
 csv = [(fold ((acc, k) -> acc += (if !!acc then ', ' else '') + k), '', all-keys)] ++ csv
 
-csv = csv |> (fold ((acc,a) -> acc + '\n' + a), '')
+csv = csv |> (fold1 ((acc,a) -> acc + '\n' + a))
 
 fs = require \fs
 fs.writeFileSync 'data/allrecords.csv', csv

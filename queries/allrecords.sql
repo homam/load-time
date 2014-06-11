@@ -19,7 +19,8 @@ WITH Visits AS (
 	INNER JOIN dbo.Wap_Visits_Ua U WITH (NOLOCK) ON V.UA_ID = U.UA_Id
 	LEFT JOIN dbo.Web_Subscriptions W WITH (NOLOCK) ON W.VisitId = V.Id AND W.Source = 0
 	LEFT JOIN dbo.Subscribers S WITH (NOLOCK) ON W.SubscriberId = S.SubscriberId
-	WHERE V.PageId IN (494, 563, 526, 595)
+	WHERE V.PageId IN (595, 688, 690, 526, 705, 706, 494, 708, 709)
+	and V.Date_Created < '2014-05-14 00:00:00'
 	ORDER BY V.Id DESC
 ),
 
@@ -34,5 +35,5 @@ SELECT C.ISO_Code AS country, P.Aspxfile as pageName, R.Referer AS referrer, E.*
 INNER JOIN dbo.Countries C WITH (NOLOCK) ON C.CountryId = E.countryId
 INNER JOIN dbo.RefererValues R WITH (NOLOCK) ON R.Pk = E.refId
 INNER JOIN dbo.PageValues P WITH (NOLOCK) ON P.Id = E.pageId
-WHERE E.visitTime > '2014-04-01 12:00:00'
+WHERE E.visitTime > '2014-05-07 00:00:00'
 ORDER BY visitid desc

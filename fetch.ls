@@ -1,3 +1,5 @@
+#!/usr/local/bin/lsc
+
 {id, Obj,map, concat, filter, each, find, fold, foldr, fold1, tail, all, flatten, sum, group-by, obj-to-pairs, partition, join, unique, sort-by, reverse, empty} = require 'prelude-ls'
 
 sql = require \mssql
@@ -11,8 +13,8 @@ _ <- fs.mkdir \data
 
 
 config =
-	user: username
-	password: password
+	user: 'Mobitrans_EF_User'
+	password: 'g^h8yt#H'
 	server: '172.30.0.165'
 	database: 'Mobitrans'
 
