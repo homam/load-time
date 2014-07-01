@@ -7,11 +7,12 @@
   },
   "dependencies": {
     "LiveScript": "*",
-    "prelude-ls": "*",
-    "execSync": "*",
     "cheerio": "0.12.0",
-    "request": "*",
     "css": "*",
-    "prompt": "^0.2.12"
+    "execSync": "*",
+    "mongojs": "^0.13.0",
+    "prelude-ls": "*",
+    "prompt": "^0.2.12",
+    "request": "*"
   }
 }
